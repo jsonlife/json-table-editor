@@ -28,7 +28,7 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 220 13% 91%;
+    --accent: 60 20% 91%;
     --accent-foreground: 222.2 84% 4.9%;
 
     --destructive: 0 84.2% 60.2%;
@@ -48,8 +48,8 @@ All colors MUST be HSL.
     --table-bg: 0 0% 100%;
     --table-header-bg: 210 40% 96.1%;
     --table-hover: 210 40% 93%;
-    --table-border: 214.3 31.8% 91.4%;
-    --table-key: 210 30% 97%;
+    --table-border: 0 0% 62%;
+    --table-key: 210 30% 87%;
     --object-header: 270 50% 96%;
     --array-header: 30 50% 96%;
     
@@ -109,7 +109,7 @@ All colors MUST be HSL.
     --table-bg: 220 13% 15%;
     --table-header-bg: 220 13% 18%;
     --table-hover: 220 13% 20%;
-    --table-border: 220 13% 25%;
+    --table-border: 0 0% 40%;
     --table-key: 220 15% 12%;
     --object-header: 270 30% 12%;
     --array-header: 30 30% 12%;
