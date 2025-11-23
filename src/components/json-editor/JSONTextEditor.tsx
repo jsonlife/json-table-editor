@@ -59,7 +59,22 @@ export const JSONTextEditor = ({ value, onChange, isValid, onUndo, onRedo, canUn
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(value);
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(value);
+      } else {
+        // Fallback for iOS
+        const textarea = document.createElement('textarea');
+        textarea.value = value;
+        textarea.style.position = 'fixed';  // avoid scrolling
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        if (!successful) throw new Error('Fallback copy failed');
+      }
+  
       toast({
         title: "Copied!",
         description: "JSON copied to clipboard"
@@ -72,6 +87,7 @@ export const JSONTextEditor = ({ value, onChange, isValid, onUndo, onRedo, canUn
       });
     }
   };
+  
 
 
   const handleFormat = () => {
@@ -186,7 +202,7 @@ export const JSONTextEditor = ({ value, onChange, isValid, onUndo, onRedo, canUn
         </div>
       </div>
       
-      <div className="flex-1 flex overflow-hidden relative">
+      <div className="flex-1 flex overflow-hidden relative border-b">
         {/* Editable content area */}
         <textarea
           ref={textareaRef}

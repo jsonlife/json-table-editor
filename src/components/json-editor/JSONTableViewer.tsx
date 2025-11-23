@@ -103,7 +103,7 @@ export const JSONTableViewer = ({ data, onChange, isValid }: JSONTableViewerProp
         </button> */}
       </div>
       
-      <div ref={tableRef} className="flex-1 overflow-auto p-4">
+      <div ref={tableRef} className="flex-1 overflow-auto p-4 border-b">
         <JSONTable data={data} onChange={onChange} path={[]} />
       </div>
     </div>

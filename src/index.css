@@ -41,7 +41,7 @@ All colors MUST be HSL.
     --radius: 0.375rem;
 
     /* JSON Editor specific tokens - Light mode */
-    --editor-bg: 0 0% 99%;
+    --editor-bg: 180 0% 95%;
     --editor-line-bg: 210 20% 96%;
     --editor-gutter: 210 20% 93%;
     --editor-text: 222.2 84% 4.9%;

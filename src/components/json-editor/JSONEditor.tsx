@@ -3,7 +3,6 @@ import { ResizablePanel } from "./ResizablePanel";
 import { JSONTextEditor } from "./JSONTextEditor";
 import { JSONTableViewer } from "./JSONTableViewer";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { toast } from "@/hooks/use-toast";
 
 const defaultJSON = {
   "title": "",
@@ -128,32 +127,96 @@ export const JSONEditor = () => {
   };
 
   return (
-    <div className="h-screen w-full bg-background overflow-hidden">
-      <header className="h-14 border-b border-border bg-card flex items-center justify-between px-6">
-        <h1 className="text-xl font-semibold text-foreground">JSONLife Table Editor</h1>
+    <div className="w-full h-screen flex flex-col bg-background">
+
+      {/* FIXED HEADER */}
+      <header className="h-16 shrink-0 border-b border-border bg-card flex items-center justify-between px-4 sm:px-6">
+        <div className="flex items-center gap-3">
+          <img
+            src="./img/JSONLife.png"
+            alt="JSONLife Logo"
+            className="p-1 h-14 w-14 sm:h-16 sm:w-16 rounded-xl sm:rounded-2xl"
+          />
+          <h1 className="text-xl font-semibold text-foreground">
+            Table Visualizer & Editor
+          </h1>
+        </div>
         <ThemeToggle />
       </header>
-      
-      <ResizablePanel
-        leftPanel={
-          <JSONTextEditor 
-            value={jsonText} 
-            onChange={handleTextChange}
-            isValid={isValidJSON}
-            onUndo={handleUndo}
-            onRedo={handleRedo}
-            canUndo={historyIndex > 0}
-            canRedo={historyIndex < history.length - 1}
+
+      {/* MIDDLE SECTION — fills remaining space automatically */}
+      <main className="h-[calc(100vh-104px)]">
+
+        {/* MOBILE (stacked layout) */}
+        <div className="flex flex-col h-full sm:hidden">
+
+          {/* JSONTextEditor = 36% */}
+          <div className="h-[36%] overflow-auto">
+            <JSONTextEditor 
+              value={jsonText}
+              onChange={handleTextChange}
+              isValid={isValidJSON}
+              onUndo={handleUndo}
+              onRedo={handleRedo}
+              canUndo={historyIndex > 0}
+              canRedo={historyIndex < history.length - 1}
+            />
+          </div>
+
+          {/* JSONTableViewer = 64% */}
+          <div className="h-[64%] overflow-auto">
+            <JSONTableViewer 
+              data={jsonObject}
+              onChange={handleObjectChange}
+              isValid={isValidJSON}
+            />
+          </div>
+        </div>
+
+        {/* DESKTOP (resizable side-by-side panels) */}
+        <div className="hidden sm:block h-full overflow-auto">
+          <ResizablePanel
+            leftPanel={
+              <div className="h-full overflow-auto">
+                <JSONTextEditor 
+                  value={jsonText}
+                  onChange={handleTextChange}
+                  isValid={isValidJSON}
+                  onUndo={handleUndo}
+                  onRedo={handleRedo}
+                  canUndo={historyIndex > 0}
+                  canRedo={historyIndex < history.length - 1}
+                />
+              </div>
+            }
+            rightPanel={
+              <div className="h-full overflow-auto">
+                <JSONTableViewer 
+                  data={jsonObject}
+                  onChange={handleObjectChange}
+                  isValid={isValidJSON}
+                />
+              </div>
+            }
           />
-        }
-        rightPanel={
-          <JSONTableViewer 
-            data={jsonObject} 
-            onChange={handleObjectChange}
-            isValid={isValidJSON}
-          />
-        }
-      />
+        </div>
+
+      </main>
+
+      {/* FIXED FOOTER */}
+      <footer className="h-10 shrink-0 flex items-center justify-center bg-card">
+        <p className="text-gray-500 text-xs inline-flex items-center">
+          &copy; 2025 JSONLife. Designed and developed by
+          <span className="ml-2 p-1 bg-white border-2 inline-flex items-center">
+            <a href="https://crafesign.com" target="_blank">
+              <img className="h-3" alt="Crafesign logo" src="./img/CrafesignLogo.svg" />
+            </a>
+          </span>
+        </p>
+      </footer>
+
     </div>
+
+
   );
 };

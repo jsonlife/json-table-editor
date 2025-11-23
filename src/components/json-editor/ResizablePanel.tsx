@@ -42,7 +42,7 @@ export const ResizablePanel = ({ leftPanel, rightPanel }: ResizablePanelProps) =
   return (
     <div 
       ref={containerRef}
-      className="flex h-[calc(100vh-3.5rem)] relative"
+      className="flex h-[calc(100vh-104px)] relative"
       style={{ cursor: isDragging ? "col-resize" : "default" }}
     >
       <div style={{ width: `${leftWidth}%` }} className="overflow-hidden">
