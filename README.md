@@ -17,6 +17,7 @@ Both the text editor section & table view sections are fully synchronized in rea
   - **Enter** → Save
   - **Esc** → Cancel  
 - Add new keys/attributes at **any position** inside any object or array.
+- Mouseover on the cell to see insert and delete buttons.
 - Deeply nested structures handled elegantly with smooth indentation.
 
 ### ✍️ Text Editor + Always Live Sync
@@ -53,6 +54,6 @@ Instead of scrolling through walls of nested JSON data in text editors, you get 
 
 > **By far the best interactive JSON table editor with intuitive UX.**
 
-## 📸 Screenshots (Add your own images here)
+## 📸 Screenshots
 <img width="1917" height="872" alt="JSONLife Screenshot" src="https://github.com/user-attachments/assets/ea2b95f9-ebe2-438f-97c1-953bf90eb42f" />
 
