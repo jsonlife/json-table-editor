@@ -141,7 +141,7 @@ export const EditRowForm = ({ currentKey, currentValue, isArray, editingTarget, 
             </button>
           </div>
         ) : (
-          <span>{currentKey}</span>
+          <span>[{currentKey}]</span>
         )}
       </td>
       

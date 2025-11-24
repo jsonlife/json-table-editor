@@ -139,7 +139,7 @@ export const JSONTable = ({ data, onChange, path, isNested = false }: JSONTableP
 
   return (
     <HoverContext.Provider value={{ hoveredPath, setHoveredPath }}>
-      <table className={`border-collapse ${isNested ? "w-auto" : "w-full"}`}>
+      <table className={`border-collapse w-auto"}`}>
         <thead>
           <tr>
             <th 
@@ -158,7 +158,7 @@ export const JSONTable = ({ data, onChange, path, isNested = false }: JSONTableP
                 >
                   {isCollapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </button>
-                <span className="font-bold">{getTypeDisplay(data)}</span>
+                <span className="font-mono font-bold">{getTypeDisplay(data)}</span>
                 {isHoveringHeader && (
                   <button
                     onClick={() => setAddingAtTop(true)}

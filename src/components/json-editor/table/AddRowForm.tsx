@@ -260,14 +260,14 @@ export const AddRowForm = ({ isArray, onAdd, onCancel, isInline = false }: AddRo
           
           <button
             onClick={handleAdd}
-            className="p-1 hover:bg-green-400/20 rounded transition-colors border border-green-600 rounded-md"
+            className="p-1 hover:bg-green-400/20 rounded transition-colors border-2 border-green-600 rounded-md"
             title="Add"
           >
             <Check className="h-4 w-4 text-green-600" />
           </button>
           <button
             onClick={onCancel}
-            className="p-1 hover:bg-destructive/20 rounded transition-colors border border-destructive rounded-md"
+            className="p-1 hover:bg-destructive/20 rounded transition-colors border-2 border-destructive rounded-md"
             title="Cancel"
           >
             <X className="h-4 w-4 text-destructive" />
