@@ -9,6 +9,11 @@ Both the text editor section & table view sections are fully synchronized in rea
 
 ## Key Features
 
+### 🔒 Privacy by Design
+- Your JSON data never leaves your browser.
+- No servers. No storage.
+- Everything runs locally on your device for complete data privacy.
+
 ### 🧩 Interactive Table View
 - View JSON objects & arrays as a clean, expandable table.
 - Every level — objects and arrays — is fully **collapsible**.

@@ -141,7 +141,29 @@ export const JSONEditor = () => {
             Table Visualizer & Editor
           </h1>
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-3">
+          <a
+            href="https://github.com/jsonlife/json-table-editor"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex px-2 py-1 rounded-lg group border border-border bg-muted hover:bg-muted/70 transition flex items-center justify-center hover:shadow-sm"
+            title="Star on GitHub"
+          >
+            <span className="text-red-500 group-hover:scale-110 transition-transform duration-200">
+              ⭐
+            </span>
+            <span className="px-1 font-semibold text-foreground">Star on</span>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" 
+              fill="currentColor" 
+              className="h-5 w-5 text-foreground"
+            >
+              <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.088 3.292 9.395 7.868 10.919.575.105.785-.25.785-.556 0-.274-.01-1-.015-1.96-3.2.695-3.878-1.542-3.878-1.542-.523-1.33-1.278-1.684-1.278-1.684-1.044-.714.08-.699.08-.699 1.155.082 1.763 1.188 1.763 1.188 1.027 1.76 2.695 1.252 3.35.957.105-.744.402-1.252.73-1.54-2.555-.29-5.238-1.278-5.238-5.686 0-1.256.45-2.283 1.187-3.087-.119-.29-.515-1.46.113-3.043 0 0 .967-.31 3.168 1.18a10.98 10.98 0 0 1 5.774 0c2.2-1.49 3.165-1.18 3.165-1.18.63 1.583.234 2.753.115 3.043.74.804 1.185 1.83 1.185 3.087 0 4.42-2.687 5.392-5.252 5.675.414.36.783 1.067.783 2.15 0 1.552-.014 2.804-.014 3.185 0 .31.207.67.79.554C20.21 21.39 23.5 17.084 23.5 12c0-6.352-5.148-11.5-11.5-11.5Z"/>
+            </svg>
+          </a>
+          <ThemeToggle />
+        </div>
       </header>
 
       {/* MIDDLE SECTION — fills remaining space automatically */}
