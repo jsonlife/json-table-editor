@@ -54,5 +54,5 @@ Instead of scrolling through walls of nested JSON data in text editors, you get 
 > **By far the best interactive JSON table editor with intuitive UX.**
 
 ## 📸 Screenshots (Add your own images here)
----<img width="1917" height="872" alt="JSONLife Screenshot" src="https://github.com/user-attachments/assets/ea2b95f9-ebe2-438f-97c1-953bf90eb42f" />
+<img width="1917" height="872" alt="JSONLife Screenshot" src="https://github.com/user-attachments/assets/ea2b95f9-ebe2-438f-97c1-953bf90eb42f" />
 
